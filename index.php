@@ -1058,7 +1058,1101 @@
     .chat-send-button i {
         font-size: 1.2rem;
     }
+
+    /* Add FAQ Section Styles */
+    .faq-section {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        padding: 4rem 0;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .faq-search {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        position: relative;
+    }
+
+    .faq-search input {
+        width: 100%;
+        padding: 1rem 1rem 1rem 3rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .faq-search input:focus {
+        outline: none;
+        border-color: #FF6600;
+        box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+    }
+
+    .faq-search i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9CA3AF;
+        font-size: 1.2rem;
+    }
+
+    .faq-categories {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .faq-category {
+        padding: 0.5rem 1.5rem;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        color: #4B5563;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .faq-category:hover,
+    .faq-category.active {
+        background: #FF6600;
+        color: white;
+        border-color: #FF6600;
+        transform: translateY(-1px);
+    }
+
+    .faq-item {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .faq-question {
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background: rgba(255, 102, 0, 0.03);
+    }
+
+    .faq-question h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #1F2937;
+        transition: color 0.3s ease;
+    }
+
+    .faq-question:hover h3 {
+        color: #FF6600;
+    }
+
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #f3f4f6;
+        transition: all 0.3s ease;
+    }
+
+    .faq-question:hover .faq-icon {
+        background: #FF6600;
+    }
+
+    .faq-question:hover .faq-icon i {
+        color: white;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.5rem;
+        color: #4B5563;
+        background: rgba(249, 250, 251, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 1000px;
+        padding: 1.5rem;
+    }
+
+    .faq-item.active .faq-icon {
+        background: #FF6600;
+        transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-icon i {
+        color: white;
+    }
+
+    .faq-answer p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .faq-answer ul,
+    .faq-answer ol {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .faq-answer ul {
+        list-style-type: disc;
+    }
+
+    .faq-answer ol {
+        list-style-type: decimal;
+    }
+
+    .faq-answer li {
+        margin: 0.5rem 0;
+    }
+
+    .faq-answer a {
+        color: #FF6600;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .faq-answer a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .faq-item.active .faq-answer {
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    /* Enhanced FAQ Styles */
+    .faq-section {
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .floating-shape {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.1;
+        animation: float 20s infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        25% {
+            transform: translate(50px, 50px) rotate(90deg);
+        }
+
+        50% {
+            transform: translate(0, 100px) rotate(180deg);
+        }
+
+        75% {
+            transform: translate(-50px, 50px) rotate(270deg);
+        }
+    }
+
+    .faq-category {
+        padding: 0.75rem 1.5rem;
+        background: white;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-category:hover,
+    .faq-category.active {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 118, 206, 0.2);
+    }
+
+    .faq-item {
+        background: white;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+    }
+
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--bg-primary);
+        transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        transform: rotate(180deg);
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 1000px;
+    }
+
+    .faq-answer-content {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--text-secondary);
+    }
+
+    .service-item {
+        padding: 1rem;
+        background: var(--bg-primary);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .service-item:hover {
+        transform: translateX(5px);
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .steps-container {
+        display: grid;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-primary);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .step:hover {
+        transform: translateX(5px);
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .industry-card {
+        padding: 1.5rem;
+        text-align: center;
+        background: var(--bg-primary);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .industry-card:hover {
+        transform: translateY(-5px);
+        background: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .support-features {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-primary);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateX(5px);
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-models {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .model {
+        padding: 1.5rem;
+        background: var(--bg-primary);
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .model:hover {
+        transform: translateY(-5px);
+        background: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .model-header {
+        margin-bottom: 0.5rem;
+    }
+
+    .model-header i {
+        font-size: 2rem;
+        color: var(--accent-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    /* Keyboard shortcut styling */
+    .faq-search .text-gray-400 {
+        padding: 2px 6px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        font-family: monospace;
+    }
+
+    /* Enhanced Mega Section Styles */
+    .dropdown-menu {
+        min-width: 280px;
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem;
+        transform-origin: top center;
+        animation: dropdownFade 0.3s ease forwards;
+    }
+
+    .dropdown-item {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: var(--text-primary);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item a i {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        font-size: 1rem;
+        color: var(--accent-primary);
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover a {
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        transform: translateX(5px);
+    }
+
+    .dropdown-item:hover i {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .expanded-menu {
+        min-width: 320px;
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1.5rem;
+        z-index: 100;
+    }
+
+    .expanded-menu h3 {
+        color: var(--text-primary);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid;
+        border-image: linear-gradient(to right, var(--accent-primary), var(--accent-secondary)) 1;
+    }
+
+    .expanded-menu ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .expanded-menu ul li a {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.75rem;
+        color: var(--text-secondary);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .expanded-menu ul li a i {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        font-size: 1rem;
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        border-radius: 8px;
+        color: var(--accent-primary);
+        transition: all 0.3s ease;
+    }
+
+    .expanded-menu ul li a:hover {
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        color: var(--accent-secondary);
+        transform: translateX(5px);
+    }
+
+    .expanded-menu ul li a:hover i {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Featured Item in Mega Menu */
+    .featured-item {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.05), rgba(255, 102, 0, 0.05));
+        border-radius: 12px;
+        border: 1px solid rgba(0, 118, 206, 0.1);
+    }
+
+    .featured-item h4 {
+        color: var(--accent-primary);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .featured-item p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .featured-item a {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent-secondary);
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .featured-item a:hover {
+        transform: translateX(5px);
+    }
+
+    /* Mega Menu Animation */
+    @keyframes dropdownFade {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Enhanced Icon Styles */
+    .mega-icon {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        transition: all 0.3s ease;
+    }
+
+    .mega-icon::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    .mega-icon i {
+        font-size: 1.2rem;
+        color: var(--accent-primary);
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover .mega-icon::before {
+        opacity: 1;
+    }
+
+    .dropdown-item:hover .mega-icon i {
+        color: white;
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Add glowing effect on hover */
+    .dropdown-item:hover .mega-icon {
+        box-shadow: 0 0 15px rgba(0, 118, 206, 0.3),
+            0 0 15px rgba(255, 102, 0, 0.3);
+    }
+
+    /* Add subtle pulse animation for important items */
+    .mega-icon.pulse {
+        animation: iconPulse 2s infinite;
+    }
+
+    @keyframes iconPulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(0, 118, 206, 0.4);
+        }
+
+        70% {
+            box-shadow: 0 0 0 10px rgba(0, 118, 206, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(0, 118, 206, 0);
+        }
+    }
+
+    /* Add ripple effect on click */
+    .mega-icon.ripple {
+        overflow: hidden;
+    }
+
+    .mega-icon.ripple::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 10%, transparent 10.01%);
+        transform: scale(10);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .mega-icon.ripple:active::after {
+        transform: scale(0);
+        opacity: 0.3;
+        transition: 0s;
+    }
+
+    /* Add floating animation for special items */
+    .mega-icon.float {
+        animation: iconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    /* Enhanced category indicators */
+    .category-indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+        border-radius: 4px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        transform: translate(50%, -50%) scale(0);
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-item:hover .category-indicator {
+        transform: translate(50%, -50%) scale(1);
+    }
+
+    /* Add subtle gradient borders */
+    .mega-section {
+        position: relative;
+        padding: 1rem;
+    }
+
+    .mega-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    /* Advanced Glass Morphism Effects */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Animated Gradient Backgrounds */
+    .gradient-bg {
+        background: linear-gradient(-45deg, #0076CE, #FF6600, #3a3dc4, #f05a28);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Advanced Button Styles */
+    .btn-modern {
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        transition: all 0.3s ease;
+    }
+
+    .btn-modern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .btn-modern:hover::before {
+        left: 100%;
+    }
+
+    /* Enhanced Card Hover Effects */
+    .service-card {
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.1),
+                transparent 40%);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .service-card:hover::before {
+        opacity: 1;
+    }
+
+    /* Floating Elements Animation */
+    .float-element {
+        animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Text Gradient Effect */
+    .gradient-text {
+        background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Advanced Section Transitions */
+    .section-transition {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-transition::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, white);
+        pointer-events: none;
+    }
+
+    /* Enhanced Scroll Progress Bar */
+    .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+        transition: transform 0.1s;
+        z-index: 1000;
+    }
+
+    /* Animated Border Effect */
+    .animated-border {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .animated-border::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(120deg, var(--primary-color), var(--accent-color), var(--primary-color));
+        background-size: 200% 200%;
+        animation: border-animation 3s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes border-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 200% 50%;
+        }
+    }
+
+    /* Neon Glow Effect */
+    .neon-glow {
+        box-shadow: 0 0 5px var(--primary-color),
+            0 0 10px var(--primary-color),
+            0 0 20px var(--primary-color);
+        animation: neon-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes neon-pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+
+    /* Advanced Image Hover Effect */
+    .image-hover {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-hover img {
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-hover:hover img {
+        transform: scale(1.1);
+    }
+
+    .image-hover::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .image-hover:hover::after {
+        opacity: 1;
+    }
     </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Toggle functionality with smooth animations
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        otherAnswer.style.maxHeight = '0';
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+                if (!isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+
+        // Enhanced Search functionality
+        const searchInput = document.getElementById('faqSearch');
+        const faqContainer = document.querySelector('.faq-container');
+
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Highlight matching text
+                    if (searchTerm) {
+                        highlightText(item, searchTerm);
+                    } else {
+                        removeHighlights(item);
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function highlightText(element, searchTerm) {
+            const content = element.innerHTML;
+            const highlightedContent = content.replace(
+                new RegExp(searchTerm, 'gi'),
+                match => `<mark class="bg-yellow-200 px-1 rounded">${match}</mark>`
+            );
+            element.innerHTML = highlightedContent;
+        }
+
+        function removeHighlights(element) {
+            const content = element.innerHTML;
+            element.innerHTML = content.replace(/<mark class="bg-yellow-200 px-1 rounded">(.*?)<\/mark>/g,
+                '$1');
+        }
+
+        // Search input event listener
+        searchInput.addEventListener('input', performSearch);
+
+        // Keyboard shortcut for search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Category filtering with animations
+        const categories = document.querySelectorAll('.faq-category');
+
+        categories.forEach(category => {
+            category.addEventListener('click', () => {
+                // Remove active class from all categories
+                categories.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked category
+                category.classList.add('active');
+
+                // Filter FAQ items with animation
+                const categoryName = category.dataset.category;
+
+                faqItems.forEach(item => {
+                    if (categoryName === 'all' || item.dataset.category ===
+                        categoryName) {
+                        item.style.opacity = '0';
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+
+    // Add scroll progress bar
+    const scrollProgress = document.createElement('div');
+    scrollProgress.className = 'scroll-progress';
+    document.body.appendChild(scrollProgress);
+
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Track mouse position for card effects
+    document.addEventListener('mousemove', (e) => {
+        document.querySelectorAll('.service-card').forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Apply glass morphism to navbar on scroll
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('glass-nav');
+        } else {
+            navbar.classList.remove('glass-nav');
+        }
+    });
+    </script>
 </head>
 
 <body class="bg-gray-100">
@@ -1104,26 +2198,32 @@
         </div>
     </section>
 
-    <section class="bg-transparent py-6 sticky top-20 z-40 transition-all duration-300 overflow-hidden">
-        <div class="mx-auto px-4">
+    <section class="bg-transparent py-6 sticky top-24 z-40 transition-all duration-300 overflow-hidden">
+        <div class="mx-auto px-4 mt-8">
             <div class="service-icons-bar overflow-hidden">
                 <div class="icons-container flex gap-8 whitespace-nowrap animate-scroll">
-                    <!-- Service Icons -->
-                    <div class="service-icon group" aria-label="Managed Services">
+                    <!-- Service Icons with enhanced styling -->
+                    <div class="service-icon group transform hover:scale-105 transition-all duration-300"
+                        aria-label="Managed Services">
                         <div
-                            class="icon-circle flex items-center justify-center w-12 h-12 rounded-full bg-white/90 shadow-md transition-all duration-300 group-hover:bg-[var(--accent-color)]">
+                            class="icon-circle flex items-center justify-center w-14 h-14 rounded-full bg-white/90 shadow-lg transition-all duration-300 group-hover:bg-[var(--accent-color)] border border-gray-100">
                             <i
-                                class="fas fa-cogs text-[var(--primary-color)] text-xl transition-all duration-300 group-hover:text-white"></i>
+                                class="fas fa-cogs text-[var(--primary-color)] text-2xl transition-all duration-300 group-hover:text-white"></i>
                         </div>
-                        <span class="text-sm font-medium text-gray-700 mt-2 block text-center">Managed Services</span>
+                        <span
+                            class="text-sm font-medium text-gray-700 mt-3 block text-center group-hover:text-[var(--accent-color)] transition-colors duration-300">Managed
+                            Services</span>
                     </div>
-                    <div class="service-icon group" aria-label="Cost Optimization">
+                    <div class="service-icon group transform hover:scale-105 transition-all duration-300"
+                        aria-label="Cost Optimization">
                         <div
-                            class="icon-circle flex items-center justify-center w-12 h-12 rounded-full bg-white/90 shadow-md transition-all duration-300 group-hover:bg-[var(--accent-color)]">
+                            class="icon-circle flex items-center justify-center w-14 h-14 rounded-full bg-white/90 shadow-lg transition-all duration-300 group-hover:bg-[var(--accent-color)] border border-gray-100">
                             <i
-                                class="fas fa-chart-line text-[var(--primary-color)] text-xl transition-all duration-300 group-hover:text-white"></i>
+                                class="fas fa-chart-line text-[var(--primary-color)] text-2xl transition-all duration-300 group-hover:text-white"></i>
                         </div>
-                        <span class="text-sm font-medium text-gray-700 mt-2 block text-center">Cost Optimization</span>
+                        <span
+                            class="text-sm font-medium text-gray-700 mt-3 block text-center group-hover:text-[var(--accent-color)] transition-colors duration-300">Cost
+                            Optimization</span>
                     </div>
                     <div class="service-icon group" aria-label="DevOps Automation">
                         <div
@@ -1447,13 +2547,16 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-12">
                 <div
-                    class="service-card p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:bg-gray-50 hover:scale-102 transition-all duration-300 animate-slide-in">
-                    <div class="text-primary text-5xl mb-6 hover:text-secondary transition-colors duration-300">
+                    class="service-card p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:bg-gray-50 hover:scale-102 transition-all duration-300 animate-slide-in border border-gray-100">
+                    <div
+                        class="text-primary text-5xl mb-6 hover:text-secondary transition-colors duration-300 transform hover:scale-110">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-text-primary mb-4">Our Vision</h3>
+                    <h3
+                        class="text-2xl font-bold text-text-primary mb-4 hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Our Vision</h3>
                     <p class="text-text-secondary leading-relaxed">
                         To be the global leader in IT solutions and staffing services, empowering businesses to achieve
                         unparalleled success through virtuous innovation and swift execution.
@@ -1461,11 +2564,14 @@
                 </div>
 
                 <div
-                    class="service-card p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:bg-gray-50 hover:scale-102 transition-all duration-300 animate-slide-in">
-                    <div class="text-primary text-5xl mb-6 hover:text-secondary transition-colors duration-300">
+                    class="service-card p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:bg-gray-50 hover:scale-102 transition-all duration-300 animate-slide-in border border-gray-100">
+                    <div
+                        class="text-primary text-5xl mb-6 hover:text-secondary transition-colors duration-300 transform hover:scale-110">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-text-primary mb-4">Our Mission</h3>
+                    <h3
+                        class="text-2xl font-bold text-text-primary mb-4 hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Our Mission</h3>
                     <p class="text-text-secondary leading-relaxed">
                         Deliver cutting-edge technology solutions that drive business transformation. Provide expertly
                         screened talent across all tech stacks. Foster long-term partnerships through ethical practices
@@ -1616,10 +2722,15 @@
         </div>
     </section>
     <!-- SAP & Cloud Migration Section -->
-    <section class="py-20 section-gradient">
+    <section class="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-[var(--text-primary)] mb-4">SAP & Cloud Migration Experts</h2>
+                <h2 class="text-4xl font-bold text-[var(--text-primary)] mb-4 relative inline-block">
+                    SAP & Cloud Migration Experts
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-1 bg-[var(--accent-secondary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
+                    </div>
+                </h2>
                 <div class="w-24 h-1 bg-[var(--accent-secondary)] mx-auto mb-6"></div>
                 <p class="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
                     We are industry leaders in Cloud Architecture for SAP deployments, providing High Availability,
@@ -1628,36 +2739,45 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="service-card p-6 text-center animate-slide-in">
+                <div
+                    class="service-card p-6 text-center animate-slide-in transform hover:scale-105 transition-all duration-300">
                     <div
-                        class="w-16 h-16 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-exchange-alt text-[var(--accent-primary)] text-2xl"></i>
+                        class="w-20 h-20 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-6 shadow-lg border border-gray-100">
+                        <i class="fas fa-exchange-alt text-[var(--accent-primary)] text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">SAP Migration</h3>
+                    <h3
+                        class="text-xl font-bold text-[var(--text-primary)] mb-3 hover:text-[var(--accent-color)] transition-colors duration-300">
+                        SAP Migration</h3>
                     <p class="text-[var(--text-secondary)]">
                         Seamless transfer of your existing SAP systems to a new environment, such as the cloud or an
                         upgraded version for better scalability and performance.
                     </p>
                 </div>
 
-                <div class="service-card p-6 text-center animate-slide-in">
+                <div
+                    class="service-card p-6 text-center animate-slide-in transform hover:scale-105 transition-all duration-300">
                     <div
-                        class="w-16 h-16 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-cloud-upload-alt text-[var(--accent-primary)] text-2xl"></i>
+                        class="w-20 h-20 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-6 shadow-lg border border-gray-100">
+                        <i class="fas fa-cloud-upload-alt text-[var(--accent-primary)] text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Hybrid Cloud Solutions</h3>
+                    <h3
+                        class="text-xl font-bold text-[var(--text-primary)] mb-3 hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Hybrid Cloud Solutions</h3>
                     <p class="text-[var(--text-secondary)]">
                         Custom-tailored combination of private and public cloud infrastructure to meet your specific
                         business requirements and security needs.
                     </p>
                 </div>
 
-                <div class="service-card p-6 text-center animate-slide-in">
+                <div
+                    class="service-card p-6 text-center animate-slide-in transform hover:scale-105 transition-all duration-300">
                     <div
-                        class="w-16 h-16 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-shield-alt text-[var(--accent-primary)] text-2xl"></i>
+                        class="w-20 h-20 mx-auto bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mb-6 shadow-lg border border-gray-100">
+                        <i class="fas fa-shield-alt text-[var(--accent-primary)] text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">Data Security</h3>
+                    <h3
+                        class="text-xl font-bold text-[var(--text-primary)] mb-3 hover:text-[var(--accent-color)] transition-colors duration-300">
+                        Data Security</h3>
                     <p class="text-[var(--text-secondary)]">
                         Comprehensive security protocols that ensure the protection and integrity of your data during
                         migration and in ongoing operations.
@@ -1885,86 +3005,272 @@
         </div>
     </section>
 
-    <section class="py-20 section-gradient">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-[var(--text-primary)] mb-4">Frequently Asked Questions</h2>
-                <div class="w-24 h-1 bg-[var(--accent-secondary)] mx-auto mb-6"></div>
-                <p class="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-                    Can't find the answer you're looking for? Reach out to our customer support team.
-                </p>
+    <!-- FAQ Section -->
+    <section class="faq-section py-24 relative overflow-hidden">
+        <!-- Background Animation Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="floating-shape" style="left: 5%; top: 10%;"></div>
+            <div class="floating-shape" style="right: 10%; top: 20%;"></div>
+            <div class="floating-shape" style="left: 15%; bottom: 15%;"></div>
+            <div class="floating-shape" style="right: 5%; bottom: 25%;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="faq-header text-center mb-16">
+                <span
+                    class="text-[var(--accent-secondary)] text-sm font-semibold tracking-wider uppercase mb-2 block">Got
+                    Questions?</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <div
+                    class="w-24 h-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] mx-auto mb-6 rounded-full">
+                </div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Find answers to common questions about our services,
+                    solutions, and how we can help transform your business.</p>
             </div>
 
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- FAQ Pair 1 -->
-                    <div class="bg-[var(--bg-primary)] rounded-lg shadow-md overflow-hidden animate-slide-in">
-                        <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(1)">
-                            <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-medium text-[var(--text-primary)]">What is SAP migration, and
-                                    why is it important?</h3>
-                                <i class="fas fa-chevron-down text-[var(--text-secondary)] transition-transform duration-300"
-                                    id="faq-arrow-1"></i>
-                            </div>
-                        </button>
-                        <div class="hidden px-6 py-4 text-[var(--text-secondary)] text-sm" id="faq-content-1">
-                            <p>SAP migration involves transferring your SAP systems to a new environment, like the cloud
-                                or an upgraded version. It ensures scalability, performance, and cost optimization,
-                                keeping your business competitive with modern technologies.</p>
+            <div class="faq-search relative max-w-2xl mx-auto mb-12">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input type="text" id="faqSearch" placeholder="Search for answers..."
+                    class="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[var(--accent-secondary)] focus:ring-2 focus:ring-[var(--accent-secondary)] focus:ring-opacity-30 transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-sm text-gray-400">
+                    Press '/' to search
+                </div>
+            </div>
+
+            <div class="faq-categories flex flex-wrap justify-center gap-4 mb-12">
+                <button class="faq-category active" data-category="all">
+                    <i class="fas fa-globe-americas mr-2"></i>All
+                </button>
+                <button class="faq-category" data-category="services">
+                    <i class="fas fa-cogs mr-2"></i>Services
+                </button>
+                <button class="faq-category" data-category="solutions">
+                    <i class="fas fa-puzzle-piece mr-2"></i>Solutions
+                </button>
+                <button class="faq-category" data-category="support">
+                    <i class="fas fa-headset mr-2"></i>Support
+                </button>
+                <button class="faq-category" data-category="pricing">
+                    <i class="fas fa-tags mr-2"></i>Pricing
+                </button>
+            </div>
+
+            <div class="faq-container max-w-4xl mx-auto">
+                <!-- FAQ Items -->
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">What services do you offer?</h3>
+                            <p class="text-sm text-gray-500 mt-1">Overview of our core services</p>
+                        </div>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
                         </div>
                     </div>
-
-                    <div class="bg-[var(--bg-primary)] rounded-lg shadow-md overflow-hidden animate-slide-in">
-                        <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(2)">
-                            <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-medium text-[var(--text-primary)]">How does cloud migration
-                                    benefit my organization?</h3>
-                                <i class="fas fa-chevron-down text-[var(--text-secondary)] transition-transform duration-300"
-                                    id="faq-arrow-2"></i>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p class="mb-4">We offer a comprehensive range of IT services including:</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div class="service-item">
+                                    <i class="fas fa-laptop-code text-[var(--accent-primary)] mr-2"></i>
+                                    Enterprise Solutions
+                                    <span class="block text-sm text-gray-500 ml-6">SAP, Oracle, Microsoft
+                                        Dynamics</span>
+                                </div>
+                                <div class="service-item">
+                                    <i class="fas fa-cloud text-[var(--accent-primary)] mr-2"></i>
+                                    Cloud Services
+                                    <span class="block text-sm text-gray-500 ml-6">AWS, Azure, Google Cloud</span>
+                                </div>
+                                <div class="service-item">
+                                    <i class="fas fa-digital-tachograph text-[var(--accent-primary)] mr-2"></i>
+                                    Digital Transformation
+                                    <span class="block text-sm text-gray-500 ml-6">Modern solutions for business
+                                        growth</span>
+                                </div>
+                                <div class="service-item">
+                                    <i class="fas fa-code text-[var(--accent-primary)] mr-2"></i>
+                                    Custom Development
+                                    <span class="block text-sm text-gray-500 ml-6">Tailored software solutions</span>
+                                </div>
                             </div>
-                        </button>
-                        <div class="hidden px-6 py-4 text-[var(--text-secondary)] text-sm" id="faq-content-2">
-                            <p>Cloud migration reduces costs with pay-as-you-go models, increases scalability, improves
-                                accessibility for remote teams, enhances security, and provides automatic updates
-                                without downtime.</p>
+                            <a href="#services"
+                                class="inline-flex items-center text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300">
+                                Learn more about our services
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- FAQ Pair 2 -->
-                    <div class="bg-[var(--bg-primary)] rounded-lg shadow-md overflow-hidden animate-slide-in">
-                        <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(3)">
-                            <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-medium text-[var(--text-primary)]">What cloud platforms do you
-                                    support?</h3>
-                                <i class="fas fa-chevron-down text-[var(--text-secondary)] transition-transform duration-300"
-                                    id="faq-arrow-3"></i>
-                            </div>
-                        </button>
-                        <div class="hidden px-6 py-4 text-[var(--text-secondary)] text-sm" id="faq-content-3">
-                            <p>We support AWS, Microsoft Azure, Google Cloud Platform, and IBM Cloud. Our experts help
-                                you choose the best platform based on your business needs and budget.</p>
+                <div class="faq-item" data-category="solutions">
+                    <div class="faq-question">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">How do I get started with your services?</h3>
+                            <p class="text-sm text-gray-500 mt-1">Simple steps to begin your journey</p>
+                        </div>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
                         </div>
                     </div>
-
-                    <div class="bg-[var(--bg-primary)] rounded-lg shadow-md overflow-hidden animate-slide-in">
-                        <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(4)">
-                            <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-medium text-[var(--text-primary)]">How do you ensure data
-                                    security during migration?</h3>
-                                <i class="fas fa-chevron-down text-[var(--text-secondary)] transition-transform duration-300"
-                                    id="faq-arrow-4"></i>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <div class="steps-container">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Initial Contact</h4>
+                                        <p>Reach out through our contact form or schedule a call</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Free Consultation</h4>
+                                        <p>Discuss your needs with our experts</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Custom Proposal</h4>
+                                        <p>Receive a tailored solution and pricing</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Begin Transform</h4>
+                                        <p>Start your digital transformation journey</p>
+                                    </div>
+                                </div>
                             </div>
-                        </button>
-                        <div class="hidden px-6 py-4 text-[var(--text-secondary)] text-sm" id="faq-content-4">
-                            <p>We use data encryption, secure VPNs, access controls, continuous monitoring, and comply
-                                with regulations like GDPR, HIPAA, or SOC 2 to ensure your data's security.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">What industries do you serve?</h3>
+                            <p class="text-sm text-gray-500 mt-1">Our expertise across sectors</p>
+                        </div>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="industry-card">
+                                    <i class="fas fa-industry text-3xl text-[var(--accent-primary)]"></i>
+                                    <h4 class="font-semibold mt-2">Manufacturing</h4>
+                                    <p class="text-sm text-gray-500">Smart manufacturing solutions</p>
+                                </div>
+                                <div class="industry-card">
+                                    <i class="fas fa-hospital-alt text-3xl text-[var(--accent-primary)]"></i>
+                                    <h4 class="font-semibold mt-2">Healthcare</h4>
+                                    <p class="text-sm text-gray-500">Digital health innovations</p>
+                                </div>
+                                <div class="industry-card">
+                                    <i class="fas fa-university text-3xl text-[var(--accent-primary)]"></i>
+                                    <h4 class="font-semibold mt-2">Finance</h4>
+                                    <p class="text-sm text-gray-500">Fintech solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="support">
+                    <div class="faq-question">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">What kind of support do you provide?</h3>
+                            <p class="text-sm text-gray-500 mt-1">Our comprehensive support system</p>
+                        </div>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <div class="support-features">
+                                <div class="feature">
+                                    <i class="fas fa-clock text-[var(--accent-primary)]"></i>
+                                    <div>
+                                        <h4>24/7 Support</h4>
+                                        <p>Round-the-clock technical assistance</p>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-user-tie text-[var(--accent-primary)]"></i>
+                                    <div>
+                                        <h4>Dedicated Manager</h4>
+                                        <p>Personal account management</p>
+                                    </div>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tools text-[var(--accent-primary)]"></i>
+                                    <div>
+                                        <h4>Regular Maintenance</h4>
+                                        <p>Proactive system updates</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pricing">
+                    <div class="faq-question">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">How is your pricing structured?</h3>
+                            <p class="text-sm text-gray-500 mt-1">Transparent pricing models</p>
+                        </div>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <div class="pricing-models">
+                                <div class="model">
+                                    <div class="model-header">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <h4>Project-Based</h4>
+                                    </div>
+                                    <p>Fixed price for specific solutions</p>
+                                </div>
+                                <div class="model">
+                                    <div class="model-header">
+                                        <i class="fas fa-sync"></i>
+                                        <h4>Subscription</h4>
+                                    </div>
+                                    <p>Monthly plans for ongoing services</p>
+                                </div>
+                                <div class="model">
+                                    <div class="model-header">
+                                        <i class="fas fa-building"></i>
+                                        <h4>Enterprise</h4>
+                                    </div>
+                                    <p>Custom pricing for large-scale solutions</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <a href="#contact"
+                                    class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] text-white rounded-full hover:shadow-lg transition-all duration-300">
+                                    Get Custom Quote
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Case Studies Section -->
     <section id="case-studies" class="py-24 bg-[var(--bg-primary)]">

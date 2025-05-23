@@ -386,6 +386,115 @@
         border: 3px solid;
         border-image: linear-gradient(to right, #FF6200, #004C84) 1;
     }
+
+    /* Global Presence Section Styles */
+    .global-presence-section {
+        background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/images/world-map-dots.svg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .global-presence-title {
+        background: linear-gradient(135deg, #0076CE, #FF6600);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .location-card {
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(0, 118, 206, 0.1);
+        overflow: hidden;
+    }
+
+    .location-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.05), rgba(255, 102, 0, 0.05));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .location-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+    }
+
+    .location-card:hover::before {
+        opacity: 1;
+    }
+
+    .location-icon {
+        position: relative;
+        transition: transform 0.4s ease;
+    }
+
+    .location-card:hover .location-icon {
+        transform: scale(1.1);
+    }
+
+    .location-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #0076CE;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+
+    .global-presence-bg-shape {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(135deg, rgba(0, 118, 206, 0.1), rgba(255, 102, 0, 0.1));
+        border-radius: 50%;
+        top: -250px;
+        right: -250px;
+        z-index: 0;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .floating-animation {
+        animation: float 3s ease-in-out infinite;
+    }
     </style>
 </head>
 
@@ -588,42 +697,78 @@
         </section>
 
         <!-- Global Presence Section -->
-        <section class="py-12 bg-gray-100">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-2 text-gray-800">VirtuSwift is Driving Digital Fulfillment Across the
-                    Globe</h2>
-                <p class="text-gray-600 mb-12 max-w-3xl mx-auto">With offices spanning multiple continents, we're
-                    positioned to serve clients wherever they are.</p>
+        <section class="py-16 global-presence-section relative">
+            <div class="global-presence-bg-shape"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h2 class="text-4xl font-bold mb-3 global-presence-title">VirtuSwift's Global Impact</h2>
+                <p class="text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+                    Empowering digital transformation across 6 continents, serving Fortune 500 companies with innovative
+                    solutions.
+                </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="location-card bg-white p-6 rounded-lg shadow-md">
-                        <div class="mb-4 text-[#0076CE]">
-                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="location-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="location-icon mb-6 text-[#0076CE] floating-animation">
+                            <i class="fas fa-globe-americas fa-3x"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">North America</h3>
-                        <p class="text-gray-600">San Francisco, New York, Toronto</p>
+                        <h3 class="text-2xl font-semibold mb-3">Americas</h3>
+                        <p class="text-gray-600 mb-4">New York • San Francisco • Toronto • São Paulo</p>
+                        <div class="location-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">250+</div>
+                                <div class="stat-label">Clients</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Offices</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="location-card bg-white p-6 rounded-lg shadow-md">
-                        <div class="mb-4 text-[#0076CE]">
-                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <div class="location-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="location-icon mb-6 text-[#0076CE] floating-animation">
+                            <i class="fas fa-globe-europe fa-3x"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Europe</h3>
-                        <p class="text-gray-600">London, Berlin, Paris</p>
+                        <h3 class="text-2xl font-semibold mb-3">Europe</h3>
+                        <p class="text-gray-600 mb-4">London • Berlin • Paris • Amsterdam</p>
+                        <div class="location-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">180+</div>
+                                <div class="stat-label">Clients</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Offices</div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="location-card bg-white p-6 rounded-lg shadow-md">
-                        <div class="mb-4 text-[#0076CE]">
-                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <div class="location-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="location-icon mb-6 text-[#0076CE] floating-animation">
+                            <i class="fas fa-globe-asia fa-3x"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Asia Pacific</h3>
-                        <p class="text-gray-600">Singapore, Sydney, Tokyo</p>
+                        <h3 class="text-2xl font-semibold mb-3">Asia Pacific</h3>
+                        <p class="text-gray-600 mb-4">Singapore • Tokyo • Sydney • Mumbai</p>
+                        <div class="location-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">200+</div>
+                                <div class="stat-label">Clients</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Offices</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <a href="#"
-                    class="inline-block mt-10 px-8 py-3 bg-[#FF6600] text-white font-medium rounded-md hover:bg-[#E05A00] transition duration-300 shadow-md">View
-                    Global Offices</a>
+                <div class="mt-12">
+                    <a href="#contact"
+                        class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-[#0076CE] to-[#FF6600] text-white font-medium rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        Connect With Our Global Team
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </section>
 

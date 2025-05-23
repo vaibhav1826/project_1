@@ -4,8 +4,15 @@
         <div class="nav-container h-14 flex items-center justify-between">
             <!-- Logo -->
             <div class="logo-container flex items-center">
-                <img src="Images/logo.png" alt="VirtuSwift Logo"
-                    class="h-14 transition-transform duration-300 hover:scale-110 hover:brightness-110 cursor-pointer">
+                <div class="relative ">
+                    <img src="Images/logo.png" alt="VirtuSwift Logo" class="h-16 transition-all duration-300  ">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#0000CD] to-[#FF6600] opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg">
+                    </div>
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-[#0000CD] to-[#FF6600] rounded-lg opacity-0 group-hover:opacity-30 blur-sm group-hover:blur transition-all duration-300 -z-10">
+                    </div>
+                </div>
             </div>
 
             <!-- Navigation -->
@@ -36,7 +43,7 @@
                         <i
                             class="fas fa-chevron-down ml-1 text-sm transition-transform duration-300 group-hover:rotate-180"></i>
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-1 bg-[#FF6600] group-hover:w-full transition-all duration-300"></span>
+                            class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#FF6600] group-hover:w-full transition-all duration-300"></span>
                     </a>
                     <div
                         class="dropdown-menu absolute top-full left-50% transform -translate-x-1/2 w-[800px] bg-white border border-gray-200 shadow-2xl rounded-xl z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
@@ -232,7 +239,7 @@
                         <i
                             class="fas fa-chevron-down ml-1 text-sm transition-transform duration-300 group-hover:rotate-180"></i>
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-1 bg-[#FF6600] group-hover:w-full transition-all duration-300"></span>
+                            class="absolute bottom-0 left-0 w-0 h-[3px] bg-[#FF6600] group-hover:w-full transition-all duration-300"></span>
                     </a>
                     <div
                         class="dropdown-menu absolute top-full left-50% transform -translate-x-1/2 w-[600px] bg-white border border-gray-200 shadow-2xl rounded-xl z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
@@ -417,7 +424,7 @@
                     <a href="retail.php" class="block py-1 text-gray-600 text-sm hover:text-[#FF6600]">Retail &
                         E-commerce</a>
 
-                    <p class="font-semibold text-gray- Африка mt-3">Healthcare & Finance</p>
+                    <p class="font-semibold text-gray-700 mt-3">Healthcare & Finance</p>
                     <a href="healthcare.php" class="block py-1 text-gray-600 text-sm hover:text-[#FF6600]">Healthcare
                         IT</a>
                     <a href="financial.php" class="block py-1 text-gray-600 text-sm hover:text-[#FF6600]">Financial
@@ -448,6 +455,42 @@
         }
     }
 
+    /* Base styles */
+    .nav-item.group .nav-link {
+        position: relative;
+        background: transparent !important;
+    }
+
+    /* Remove yellow highlight/underline from Services and Industries */
+    .nav-item.group .nav-link::before,
+    .nav-item.group .nav-link::after,
+    .nav-item.group .nav-link>*::before,
+    .nav-item.group .nav-link>*::after {
+        content: none !important;
+        display: none !important;
+        background: none !important;
+    }
+
+    /* Override any existing highlight styles */
+    .nav-item.group .nav-link,
+    .nav-item.group:hover .nav-link,
+    .nav-item.group:focus .nav-link {
+        background-image: none !important;
+        text-decoration: none !important;
+        border: none !important;
+    }
+
+    /* Remove any background decorations */
+    .nav-item.group .nav-link span {
+        background: none !important;
+    }
+
+    .nav-item.group .nav-link span::before,
+    .nav-item.group .nav-link span::after {
+        display: none !important;
+    }
+
+    /* Rest of your existing styles */
     @keyframes slideIn {
         from {
             transform: translateX(-15px);
@@ -496,21 +539,90 @@
         transform: translateY(-2px);
     }
 
-    /* Center the dropdown menu and position slightly below navbar */
+    /* Thin gray separator line */
+    .nav-container {
+        position: relative;
+        border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+    }
+
+    /* Extra bold orange hover line for Services and Industries */
+    .nav-item.group .nav-link span.absolute {
+        height: 8px !important;
+        /* Increased thickness */
+        background: #FF6600;
+        transition: width 0.3s ease;
+        bottom: -4px !important;
+        /* Position to overlap gray line */
+        z-index: 5;
+        /* Ensure it appears above the gray line */
+        border-radius: 4px 4px 0 0;
+        /* Rounded top corners */
+    }
+
+    /* Adjust dropdown positioning */
     .dropdown-menu {
         left: 50% !important;
         transform: translateX(-50%) !important;
         margin: 0 auto;
-        top: calc(100% + 2px) !important;
-        /* 2px gap for slight touch */
+        top: calc(100% + 12px) !important;
         width: 680px !important;
-        /* Fixed width for all menus */
         max-width: 680px;
         border: none;
-        border-radius: 0 0 10px 10px;
-        /* Rounded bottom corners */
+        border-radius: 8px !important;
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        position: absolute;
+        z-index: 2;
+        background: #fff;
+    }
+
+    /* Ensure orange line is visible on hover */
+    .nav-item.group:hover .nav-link span.absolute {
+        width: 100%;
+        height: 12px;
+        background: transparent;
+    }
+
+    .dropdown-menu::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 5px;
+        background-color: #FF6600;
+        border-radius: 2.5px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-item:hover .dropdown-menu::after {
+        opacity: 1;
+        width: 120px;
+    }
+
+    /* Add a subtle transition effect for the megamenu */
+    .nav-item:hover .dropdown-menu {
+        animation: smoothAppear 0.3s ease forwards;
+    }
+
+    @keyframes smoothAppear {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+    /* Enhance megamenu container */
+    .mega-menu-container {
+        border-radius: 8px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     }
 
     /* Mega Menu Enhancements */
@@ -524,6 +636,8 @@
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         justify-content: center;
+        position: relative;
+        /* Added for positioning context */
     }
 
     .mega-menu-container:hover {
@@ -634,10 +748,11 @@
 
     .nav-link span:last-child {
         width: 0 !important;
-        height: 2px !important;
-        bottom: -2px !important;
+        height: 8px !important;
+        bottom: -4px !important;
         background: #FF6600 !important;
         transition: width 0.3s ease;
+        border-radius: 4px 4px 0 0;
     }
 
     /* Mobile Menu Animations */
@@ -695,6 +810,285 @@
 
     .actions-container a:hover .fa-phone-alt {
         transform: rotate(12deg);
+    }
+
+    /* Specific rule to remove orange line from Services and Industries */
+    .nav-item.group>.nav-link span:last-child {
+        display: none !important;
+    }
+
+    /* Keep orange line for other nav items */
+    .nav-link span:last-child {
+        width: 0 !important;
+        height: 6px !important;
+        bottom: -3px !important;
+        background: #FF6600 !important;
+        transition: width 0.3s ease;
+        border-radius: 3px 3px 0 0;
+    }
+
+    /* Specific styles for Services and Industries dropdown items */
+    .nav-item.group .nav-link span.absolute.bottom-0 {
+        display: none !important;
+    }
+
+    /* Keep orange line for non-dropdown nav items */
+    .nav-item:not(.group) .nav-link span.absolute.bottom-0 {
+        display: block;
+        width: 0;
+        height: 6px;
+        background: #FF6600;
+        transition: width 0.3s ease;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .nav-item:not(.group):hover .nav-link span.absolute.bottom-0 {
+        width: 100%;
+    }
+
+    /* Thicker orange hover line */
+    .nav-link span.absolute.bottom-0,
+    .nav-item.group .nav-link span.absolute {
+        height: 6px !important;
+        background: #FF6600;
+        transition: width 0.3s ease;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .nav-item.group:hover .nav-link span.absolute {
+        width: 100%;
+    }
+
+    /* FAQ Section Enhancements */
+    .faq-container {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-question {
+        padding: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background: rgba(255, 102, 0, 0.03);
+    }
+
+    .faq-question h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1F2937;
+        transition: color 0.3s ease;
+    }
+
+    .faq-question:hover h3 {
+        color: #FF6600;
+    }
+
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #f3f4f6;
+        transition: all 0.3s ease;
+    }
+
+    .faq-question:hover .faq-icon {
+        background: #FF6600;
+        transform: rotate(180deg);
+    }
+
+    .faq-question:hover .faq-icon i {
+        color: white;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.25rem;
+        color: #4B5563;
+        background: rgba(249, 250, 251, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 1.25rem;
+        border-top: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .faq-item.active .faq-question {
+        background: rgba(255, 102, 0, 0.03);
+    }
+
+    .faq-item.active .faq-icon {
+        background: #FF6600;
+        transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-icon i {
+        color: white;
+    }
+
+    /* FAQ Animation Effects */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .faq-item.active .faq-answer {
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    /* FAQ Hover Effects */
+    .faq-container:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+    }
+
+    .faq-question .faq-icon i {
+        transition: all 0.3s ease;
+    }
+
+    /* FAQ Content Styling */
+    .faq-answer p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .faq-answer ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .faq-answer li {
+        margin: 0.5rem 0;
+        color: #4B5563;
+    }
+
+    .faq-answer a {
+        color: #FF6600;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .faq-answer a:hover {
+        text-decoration: underline;
+    }
+
+    /* FAQ Search and Filter (if needed) */
+    .faq-search {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .faq-search input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        padding-left: 2.5rem;
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    .faq-search input:focus {
+        outline: none;
+        border-color: #FF6600;
+        box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+    }
+
+    .faq-search i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9CA3AF;
+    }
+
+    /* FAQ Categories (if needed) */
+    .faq-categories {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .faq-category {
+        padding: 0.5rem 1rem;
+        background: white;
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #4B5563;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .faq-category:hover,
+    .faq-category.active {
+        background: #FF6600;
+        color: white;
+        border-color: #FF6600;
+    }
+
+    /* Logo styles */
+    .logo-container {
+        display: flex;
+    }
+
+    .logo-container img {
+        height: 3.5rem;
+    }
+
+    /* Remove all previous logo styles */
+    .logo-container:hover img,
+    .logo-container:hover .group,
+    .logo-container .group,
+    .logo-container img:hover {
+        animation: none;
+        transform: none;
+        transition: none;
+        filter: none;
+        box-shadow: none;
+    }
+
+    @keyframes logoGlow {
+
+        0%,
+        50%,
+        100% {
+            box-shadow: none;
+        }
     }
     </style>
 </nav>
